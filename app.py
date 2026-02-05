@@ -2,6 +2,21 @@ import streamlit as st
 import pickle
 import requests
 
+# DOWNLOAD THE MISSING FILES
+if not os.path.exists("similarity.pkl"):
+    url = "https://github.com/Thanusha8/ML-Movie-Recommender/raw/main/similarity.pkl"
+    r = requests.get(url, stream=True)
+    with open("similarity.pkl", "wb") as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
+
+if not os.path.exists("movies_list.pkl"):
+    url2 = "https://github.com/Thanusha8/ML-Movie-Recommender/raw/main/movies_list.pkl"
+    r = requests.get(url2, stream=True)
+    with open("movies_list.pkl", "wb") as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
+
 def fetch_poster(movie_id):
      url = "https://api.themoviedb.org/3/movie/{}?api_key=c7ec19ffdd3279641fb606d19ceb9bb1&language=en-US".format(movie_id)
      data=requests.get(url)
