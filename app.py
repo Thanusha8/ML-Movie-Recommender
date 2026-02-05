@@ -1,7 +1,21 @@
 import streamlit as st
 import pickle
 import requests
+import os
 
+
+# Download from YOUR GitHub
+if not os.path.exists("movies_list.pkl"):
+    url = "https://github.com/Thanusha8/ML-Movie-Recommender/raw/main/movies_list.pkl"
+    r = requests.get(url)
+    with open("movies_list.pkl", "wb") as f:
+        f.write(r.content)
+
+if not os.path.exists("similarity.pkl"):
+    url = "https://github.com/Thanusha8/ML-Movie-Recommender/raw/main/similarity.pkl"  
+    r = requests.get(url)
+    with open("similarity.pkl", "wb") as f:
+        f.write(r.content)
 
 
 def fetch_poster(movie_id):
