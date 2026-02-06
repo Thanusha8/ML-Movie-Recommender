@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import requests
 
+import gdown
+import os
 
 
 def fetch_poster(movie_id):
@@ -13,6 +15,12 @@ def fetch_poster(movie_id):
      return full_path
 
 movies = pickle.load(open("movies_list.pkl", 'rb'))
+
+if not os.path.exists("similarity.pkl"):
+    url = "https://drive.google.com/uc?id=1NvBEge5Ai7vR4wg8ANgYxIjm0Iyc84Ne"
+    gdown.download(url, "similarity.pkl", quiet=False)
+
+
 similarity = pickle.load(open("similarity.pkl", 'rb'))
 movies_list = movies['title'].values
 
