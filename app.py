@@ -15,6 +15,11 @@ def fetch_poster(movie_id):
      return full_path
 
 
+# Download BOTH pickle files from Google Drive
+if not os.path.exists("movies_list.pkl"):
+    url = "https://drive.google.com/uc?id=18sb4qMq2W-JTVcRxxuA1xa4R0ZSYN8P0" 
+    gdown.download(url, "movies_list.pkl", quiet=False)
+
 movies = pickle.load(open("movies_list.pkl", 'rb'))
 
 if not os.path.exists("similarity.pkl"):
