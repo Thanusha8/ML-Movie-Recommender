@@ -14,6 +14,16 @@ def fetch_poster(movie_id):
      full_path = "https://image.tmdb.org/t/p/w500/"+poster_path
      return full_path
 
+#
+if not os.path.exists("movies_list.pkl"):
+    st.error("ERROR: movies_list.pkl file is missing!")
+else:
+    # Check file size
+    file_size = os.path.getsize("movies_list.pkl")
+    st.write(f"File size: {file_size} bytes")
+    if file_size == 0:
+        st.error("ERROR: movies_list.pkl is empty (0 bytes)!")
+
 movies = pickle.load(open("movies_list.pkl", 'rb'))
 
 if not os.path.exists("similarity.pkl"):
