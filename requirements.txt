@@ -7,3 +7,4 @@ rich==13.5.2
 markdown-it-py==3.0.0
 pygments==2.18.1
 
+
