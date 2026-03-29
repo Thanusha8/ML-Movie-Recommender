@@ -1,6 +1,9 @@
 # ML-Movie-Recommender
 
 <img width="873" height="798" alt="image" src="https://github.com/user-attachments/assets/c76968f1-8f8b-44d1-8ba8-79652b62d864" />
+---
+
+&nbsp;
 <img width="736" height="761" alt="image" src="https://github.com/user-attachments/assets/76d06f59-45e1-448b-8a86-fe65bb850670" />
 
 A **Movie Recommender System** built using **Python**, **Streamlit**, and **Machine Learning**. This application suggests movies similar to the one selected by the user based on content similarity and provides poster images for better visualization.  
